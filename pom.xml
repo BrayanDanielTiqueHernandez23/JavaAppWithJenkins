@@ -6,32 +6,26 @@
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
   <version>2.3.1.BUILD-SNAPSHOT</version>
-
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>2.3.1.RELEASE</version>
   </parent>
   <name>petclinic</name>
-
   <properties>
-
     <!-- Generic properties -->
     <java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
     <!-- Web dependencies -->
     <webjars-bootstrap.version>3.3.6</webjars-bootstrap.version>
     <webjars-jquery-ui.version>1.11.4</webjars-jquery-ui.version>
     <webjars-jquery.version>2.2.4</webjars-jquery.version>
     <wro4j.version>1.8.0</wro4j.version>
-
     <jacoco.version>0.8.5</jacoco.version>
     <nohttp-checkstyle.version>0.0.4.RELEASE</nohttp-checkstyle.version>
     <spring-format.version>0.0.22</spring-format.version>
   </properties>
-
   <dependencies>
     <!-- Spring and Spring Boot dependencies -->
     <dependency>
@@ -69,7 +63,6 @@
             </exclusion>
         </exclusions>
     </dependency>
-
     <!-- Databases - Uses H2 by default -->
     <dependency>
       <groupId>com.h2database</groupId>
@@ -81,7 +74,6 @@
       <artifactId>mysql-connector-java</artifactId>
       <scope>runtime</scope>
     </dependency>
-
     <!-- caching -->
     <dependency>
       <groupId>javax.cache</groupId>
@@ -91,7 +83,6 @@
       <groupId>org.ehcache</groupId>
       <artifactId>ehcache</artifactId>
     </dependency>
-
     <!-- webjars -->
     <dependency>
       <groupId>org.webjars</groupId>
@@ -113,7 +104,6 @@
       <version>${webjars-bootstrap.version}</version>
     </dependency>
     <!-- end of webjars -->
-
     <!-- Testing -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -125,14 +115,12 @@
       <artifactId>mockito-junit-jupiter</artifactId>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
       <optional>true</optional>
     </dependency>
   </dependencies>
-
   <build>
     <plugins>
       <plugin>
@@ -222,7 +210,6 @@
           </execution>
         </executions>
       </plugin>
-
       <!-- Spring Boot Actuator displays build-related information if a git.properties
         file is present at the classpath -->
       <plugin>
@@ -244,7 +231,6 @@
           <failOnNoGitDirectory>false</failOnNoGitDirectory>
         </configuration>
       </plugin>
-
       <plugin>
         <groupId>ro.isdc.wro4j</groupId>
         <artifactId>wro4j-maven-plugin</artifactId>
@@ -277,27 +263,6 @@
           </dependency>
         </dependencies>
       </plugin>
-      <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-                <source>1.8</source>
-                <target>1.8</target>
-                <useIncrementalCompilation>false</useIncrementalCompilation>
-                <!-- Desactiva Checkstyle durante la compilación -->
-                <compilerArgs>
-                    <arg>-Xlint:none</arg>
-                </compilerArgs>
-            </configuration>
-        </plugin>
-        <!-- Desactiva Checkstyle durante la fase de pruebas -->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <configuration>
-                <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
-            </configuration>
-        </plugin>
     </plugins>
   </build>
 
@@ -307,7 +272,6 @@
       <url>https://www.apache.org/licenses/LICENSE-2.0</url>
     </license>
   </licenses>
-
   <repositories>
     <repository>
       <id>spring-snapshots</id>
@@ -326,7 +290,6 @@
       </snapshots>
     </repository>
   </repositories>
-
   <pluginRepositories>
     <pluginRepository>
       <id>spring-snapshots</id>
@@ -345,7 +308,6 @@
       </snapshots>
     </pluginRepository>
   </pluginRepositories>
-
   <profiles>
     <profile>
       <id>m2e</id>
@@ -401,5 +363,4 @@
       </build>
     </profile>
   </profiles>
-
 </project>
